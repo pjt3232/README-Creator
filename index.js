@@ -52,35 +52,35 @@ inquirer
   ])
   .then(response => {
     const markdown = `
-    # ${response.title}
+# ${response.title}
 
-    ## Description
-    ${response.description}
+## Description
+${response.description}
 
-    ## Table of Contents 
-    * [Installation](#installation)
-    * [Usage](#usage)
-    * [License](#license)
-    * [Contributions](#contributions)
-    * [Tests](#tests)
-    * [Questions](#questions)
+## Table of Contents 
+* [Installation](#installation)
+* [Usage](#usage)
+* [License](#license)
+* [Contributions](#contributions)
+* [Tests](#tests)
+* [Questions](#questions)
     
-    ## Installation
-    ${response.installation}
+## Installation
+${response.installation}
 
-    ## License
-    [![License: ${response.license}](https://img.shields.io/badge/License-${encodeURIComponent(response.license)}-yellow.svg)](https://opensource.org/licenses/${encodeURIComponent(response.license)});
-    This application is covered under the ${response.license} license.
+## License
+[![License: ${response.license}](https://img.shields.io/badge/License-${encodeURIComponent(response.license)}-yellow.svg)](https://opensource.org/licenses/${encodeURIComponent(response.license)});
+This application is covered under the ${response.license} license.
 
-    ## Contributions
-    ${response.contribution}
+## Contributions
+${response.contribution}
 
-    ## Tests
-    ${response.testing}
+## Tests
+${response.testing}
 
-    ## Questions
-    If you have any questions or issues, feel free to reach out to me on [GitHub](https://github.com/${response.github}) or contact me at ${response.email}.
-    `;
+## Questions
+If you have any questions or issues, feel free to reach out to me on [GitHub](https://github.com/${response.github}) or contact me at ${response.email}.
+`;
 
     fs.writeFile("README.md", markdown, (err) => 
     err ? console.error(err) : console.log('README.md file created successfully!'
