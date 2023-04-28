@@ -49,4 +49,36 @@ inquirer
       name: 'email',
     },
   ])
+  .then((response) => {
+    const markdown = `
+    # ${response.title}
+
+    ## Description
+    ${reponse.description}
+
+    ## Table of Contents 
+    * [Installation](#installation)
+    * [Usage](#usage)
+    * [License](#license)
+    * [Contributions](#contributions)
+    * [Tests](#tests)
+    * [Questions](#questions)
+    
+    ## Installation
+    ${response.installation}
+
+    ## License
+    [![License: ${response.license}](https://img.shields.io/badge/License-${encodeURIComponent(response.license)}-yellow.svg)](https://opensource.org/licenses/${encodeURIComponent(response.license)});
+    This application is covered under the ${response.license} license.
+
+    ## Contributions
+    ${response.contribution}
+
+    ## Tests
+    ${response.testing}
+
+    ## Questions
+    If you have any questions or issues, feel free to reach out to me on [GitHub](https://github.com/${response.github}) or contact me at ${response.email}.
+    `;
+
   
