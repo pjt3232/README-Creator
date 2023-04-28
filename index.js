@@ -37,6 +37,7 @@ inquirer
       type: 'list',
       message: 'Choose a license for your project:',
       choices: ['MIT', 'GPLv3', 'Apache', 'BSD'],
+      name: 'license',
     },
     {
       type: 'input',
@@ -49,12 +50,12 @@ inquirer
       name: 'email',
     },
   ])
-  .then((response) => {
+  .then(response => {
     const markdown = `
     # ${response.title}
 
     ## Description
-    ${reponse.description}
+    ${response.description}
 
     ## Table of Contents 
     * [Installation](#installation)
@@ -81,4 +82,7 @@ inquirer
     If you have any questions or issues, feel free to reach out to me on [GitHub](https://github.com/${response.github}) or contact me at ${response.email}.
     `;
 
-  
+    fs.writeFile("README.md", markdown, (err) => 
+    err ? console.error(err) : console.log('README.md file created successfully!'
+    ));
+  }); 
