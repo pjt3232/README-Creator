@@ -68,6 +68,9 @@ ${response.description}
 ## Installation
 ${response.installation}
 
+## Usage
+${response.usage}
+
 ## License
 [![License: ${response.license}](https://img.shields.io/badge/License-${encodeURIComponent(response.license)}-yellow.svg)](https://opensource.org/licenses/${encodeURIComponent(response.license)});
 This application is covered under the ${response.license} license.
